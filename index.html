@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>CompSaver Pro</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="header">
+        <div class="header-inner">
+            <div class="logo-wrap">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 2L2 7l10 5 10-5-10-5z" fill="rgba(168,85,247,0.2)" stroke="#a855f7" stroke-width="1.5" stroke-linejoin="round"/>
+                    <path d="M2 12l10 5 10-5" stroke="rgba(168,85,247,0.6)" stroke-width="1.5" stroke-linejoin="round"/>
+                    <path d="M2 17l10 5 10-5" stroke="rgba(168,85,247,0.3)" stroke-width="1.5" stroke-linejoin="round"/>
+                </svg>
+            </div>
+
+            <div class="main-switcher">
+                <button class="main-nav-btn" id="btn-main-toolkit" type="button" title="Toolkit" aria-label="Toolkit">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.8-3.8a6 6 0 0 1-7.9 7.9l-6.6 6.6a2 2 0 0 1-2.8-2.8l6.6-6.6a6 6 0 0 1 7.9-7.9l-4 3.6z"/>
+                    </svg>
+                    <span>Toolkit</span>
+                </button>
+                <button class="main-nav-btn active" id="btn-main-templates" type="button" title="Templates" aria-label="Templates">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                        <path d="M2 12l10 5 10-5"/>
+                        <path d="M2 17l10 5 10-5"/>
+                    </svg>
+                    <span>Templates</span>
+                </button>
+            </div>
+
+            <div class="search-row">
+                <button id="btn-browse" class="icon-btn" title="Change Folder" aria-label="Change Folder">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+                        <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>
+                    </svg>
+                </button>
+
+                <input type="text" id="search-box" placeholder="Search">
+
+                <button id="btn-refresh" class="icon-btn" title="Refresh" aria-label="Refresh">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+                        <path d="M23 4v6h-6M1 20v-6h6"/>
+                        <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="brand-by"><span id="template-count">0</span></div>
+        </div>
+    </div>
+
+    <div id="toolkit-module" class="toolkit-module" style="display:none;">
+        <div class="toolkit-sub-tabs">
+            <button class="toolkit-tab active" data-toolkit-section="home" type="button">Section 1</button>
+            <button class="toolkit-tab" data-toolkit-section="sub2" type="button">Sub Section 2</button>
+            <button class="toolkit-tab" data-toolkit-section="sub3" type="button">Sub Section 3</button>
+            <button class="toolkit-tab" data-toolkit-section="sub4" type="button">Sub Section 4</button>
+            <button class="toolkit-tab" data-toolkit-section="sub5" type="button">Sub Section 5</button>
+        </div>
+
+        <div class="toolkit-view active" id="toolkit-home">
+            <div class="toolkit-home-logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 2L2 7l10 5 10-5-10-5z" fill="rgba(168,85,247,0.22)" stroke="#c084fc" stroke-width="1.5" stroke-linejoin="round"/>
+                    <path d="M2 12l10 5 10-5" stroke="rgba(192,132,252,0.7)" stroke-width="1.5" stroke-linejoin="round"/>
+                    <path d="M2 17l10 5 10-5" stroke="rgba(192,132,252,0.35)" stroke-width="1.5" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <div class="toolkit-kicker">CompSaver Toolkit</div>
+            <div class="toolkit-title">Section 1 Home</div>
+            <div class="toolkit-toolbar">
+                <div class="toolkit-group">
+                    <div class="toolkit-group-title">Anchor</div>
+                    <div class="toolkit-button-grid anchor-grid">
+                        <button class="toolkit-action" data-toolkit-action="anchor" data-mode="top_left" title="Anchor Top Left">TL</button>
+                        <button class="toolkit-action" data-toolkit-action="anchor" data-mode="top" title="Anchor Top">T</button>
+                        <button class="toolkit-action" data-toolkit-action="anchor" data-mode="top_right" title="Anchor Top Right">TR</button>
+                        <button class="toolkit-action" data-toolkit-action="anchor" data-mode="left" title="Anchor Left">L</button>
+                        <button class="toolkit-action strong" data-toolkit-action="anchor" data-mode="center" title="Anchor Center">C</button>
+                        <button class="toolkit-action" data-toolkit-action="anchor" data-mode="right" title="Anchor Right">R</button>
+                        <button class="toolkit-action" data-toolkit-action="anchor" data-mode="bottom_left" title="Anchor Bottom Left">BL</button>
+                        <button class="toolkit-action" data-toolkit-action="anchor" data-mode="bottom" title="Anchor Bottom">B</button>
+                        <button class="toolkit-action" data-toolkit-action="anchor" data-mode="bottom_right" title="Anchor Bottom Right">BR</button>
+                    </div>
+                </div>
+                <div class="toolkit-group">
+                    <div class="toolkit-group-title">Align</div>
+                    <div class="toolkit-button-grid align-grid">
+                        <button class="toolkit-action" data-toolkit-action="align" data-mode="left" title="Align Left">L</button>
+                        <button class="toolkit-action" data-toolkit-action="align" data-mode="hcenter" title="Horizontal Center">HC</button>
+                        <button class="toolkit-action" data-toolkit-action="align" data-mode="right" title="Align Right">R</button>
+                        <button class="toolkit-action" data-toolkit-action="align" data-mode="top" title="Align Top">T</button>
+                        <button class="toolkit-action" data-toolkit-action="align" data-mode="vcenter" title="Vertical Center">VC</button>
+                        <button class="toolkit-action" data-toolkit-action="align" data-mode="bottom" title="Align Bottom">B</button>
+                    </div>
+                </div>
+                <div class="toolkit-group">
+                    <div class="toolkit-group-title">Create</div>
+                    <div class="toolkit-button-row">
+                        <button class="toolkit-action" data-toolkit-action="create" data-mode="null" title="Null Object">Null</button>
+                        <button class="toolkit-action" data-toolkit-action="create" data-mode="adjustment" title="Adjustment Layer">Adj</button>
+                        <button class="toolkit-action" data-toolkit-action="create" data-mode="camera" title="Camera Rig">Cam</button>
+                        <button class="toolkit-action" data-toolkit-action="create" data-mode="solid" title="Solid">Solid</button>
+                        <button class="toolkit-action" data-toolkit-action="create" data-mode="text" title="Text Layer">Text</button>
+                    </div>
+                </div>
+                <div class="toolkit-group">
+                    <div class="toolkit-group-title">Project</div>
+                    <div class="toolkit-button-row">
+                        <button class="toolkit-action wide" data-toolkit-action="organize" title="Organize Project">Organize</button>
+                        <button class="toolkit-action wide" data-toolkit-action="effects" title="Toggle All Effects">FX Toggle</button>
+                        <button class="toolkit-action wide" data-toolkit-action="precompose" title="Pre-compose Selected Layers">Precomp</button>
+                        <button class="toolkit-action wide" data-toolkit-action="unprecompose" title="Unpre-compose Selected Pre-comp">Unprecomp</button>
+                        <button class="toolkit-action wide danger" data-toolkit-action="cache" title="Purge Cache">Cache</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="toolkit-view toolkit-empty" id="toolkit-sub2"><span>Sub Section 2</span></div>
+        <div class="toolkit-view toolkit-empty" id="toolkit-sub3"><span>Sub Section 3</span></div>
+        <div class="toolkit-view toolkit-empty" id="toolkit-sub4"><span>Sub Section 4</span></div>
+        <div class="toolkit-view toolkit-empty" id="toolkit-sub5"><span>Sub Section 5</span></div>
+    </div>
+
+    <div class="section-switcher">
+        <button class="section-btn active" id="btn-section-comp" title="Compositions" aria-label="Compositions">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <rect x="2" y="3" width="20" height="14" rx="2"/>
+                <line x1="8" y1="21" x2="16" y2="21"/>
+                <line x1="12" y1="17" x2="12" y2="21"/>
+            </svg>
+        </button>
+
+        <button class="section-btn" id="btn-section-png" title="PNG / Assets" aria-label="PNG / Assets">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <rect x="3" y="3" width="18" height="18" rx="3"/>
+                <circle cx="8.5" cy="8.5" r="1.5"/>
+                <polyline points="21 15 16 10 5 21"/>
+            </svg>
+        </button>
+
+        <button class="section-btn" id="btn-section-transition" title="Layers" aria-label="Layers">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                <path d="M2 12l10 5 10-5"/>
+                <path d="M2 17l10 5 10-5"/>
+            </svg>
+        </button>
+
+        <button class="section-btn" id="btn-section-text" title="Text Layers" aria-label="Text Layers">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="4 7 4 4 20 4 20 7"/>
+                <line x1="9" y1="20" x2="15" y2="20"/>
+                <line x1="12" y1="4" x2="12" y2="20"/>
+            </svg>
+        </button>
+
+        <button class="section-btn" id="btn-section-footage" title="Footage / Video" aria-label="Footage Layers">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="23 7 16 12 23 17 23 7"/>
+                <rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
+            </svg>
+        </button>
+
+        <button class="section-btn" id="btn-section-effect" title="Effects Presets" aria-label="Effects">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+            </svg>
+        </button>
+    </div>
+
+    <div class="tabs-wrapper">
+        <div id="category-tabs" class="tabs-area">
+            <button class="cat-pill active" data-cat="All">All</button>
+            <button class="cat-pill special-tab" data-cat="Favorites">★ Fav</button>
+        </div>
+
+        <button id="btn-more-cats" class="icon-btn" title="Categories" aria-label="Categories">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+                <line x1="8" y1="6" x2="21" y2="6"/>
+                <line x1="8" y1="12" x2="21" y2="12"/>
+                <line x1="8" y1="18" x2="21" y2="18"/>
+                <line x1="3" y1="6" x2="3.01" y2="6"/>
+                <line x1="3" y1="12" x2="3.01" y2="12"/>
+                <line x1="3" y1="18" x2="3.01" y2="18"/>
+            </svg>
+        </button>
+
+        <div id="cat-panel" class="cat-panel">
+            <div class="cat-panel-header">
+                <span>Categories</span>
+                <button id="btn-close-cats" aria-label="Close Categories">✕</button>
+            </div>
+            <div id="cat-panel-list" class="cat-panel-list"></div>
+        </div>
+    </div>
+
+    <div id="section-comp" class="section-content">
+        <div id="comp-list-container" class="grid-container"></div>
+    </div>
+
+    <div id="section-transition" class="section-content" style="display:none;">
+        <div id="transition-list-container" class="grid-container"></div>
+    </div>
+
+    <div id="section-text" class="section-content" style="display:none;">
+        <div class="sub-section-tabs">
+            <button class="sub-tab active" data-type="text_props" title="Text Properties" aria-label="Text Properties">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                    <line x1="4" y1="21" x2="4" y2="14"/>
+                    <line x1="4" y1="10" x2="4" y2="3"/>
+                    <line x1="12" y1="21" x2="12" y2="12"/>
+                    <line x1="12" y1="8" x2="12" y2="3"/>
+                    <line x1="20" y1="21" x2="20" y2="16"/>
+                    <line x1="20" y1="12" x2="20" y2="3"/>
+                    <line x1="2" y1="14" x2="6" y2="14"/>
+                    <line x1="10" y1="8" x2="14" y2="8"/>
+                    <line x1="18" y1="16" x2="22" y2="16"/>
+                </svg>
+            </button>
+            <button class="sub-tab" data-type="text" title="Text Layer" aria-label="Text Layer">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="4 7 4 4 20 4 20 7"/>
+                    <line x1="9" y1="20" x2="15" y2="20"/>
+                    <line x1="12" y1="4" x2="12" y2="20"/>
+                </svg>
+            </button>
+        </div>
+        <div id="text-list-container" class="grid-container"></div>
+    </div>
+
+    <div id="section-footage" class="section-content" style="display:none;">
+        <div id="footage-list-container" class="grid-container"></div>
+    </div>
+
+    <div id="section-effect" class="section-content" style="display:none;">
+        <div id="effect-list-container" class="grid-container"></div>
+    </div>
+
+    <div id="section-images" class="section-content" style="display:none;">
+        <div class="sub-section-tabs">
+            <button class="sub-tab active" data-type="icon" title="Icons" aria-label="Icons">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="5" y="5" width="14" height="14" rx="2"/>
+                </svg>
+            </button>
+            <button class="sub-tab" data-type="overlay" title="Overlays" aria-label="Overlays">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="7" y="3" width="10" height="18" rx="2"/>
+                </svg>
+            </button>
+        </div>
+        <div id="icon-list-container" class="icon-grid"></div>
+    </div>
+
+    <div class="footer-area">
+        <button id="btn-save-main" class="btn-neon-outline">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <line x1="12" y1="5" x2="12" y2="19"/>
+                <line x1="5" y1="12" x2="19" y2="12"/>
+            </svg>
+            <span id="save-btn-text">Template Save</span>
+        </button>
+    </div>
+
+    <!-- SAVE MODAL -->
+    <div id="save-modal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-title" id="save-modal-title">Template Save</div>
+
+            <div class="modal-field">
+                <label>Save Type</label>
+                <div class="save-type-picker">
+                    <button type="button" class="save-type-btn active" data-save-type="comp" title="Comp" aria-label="Comp">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                            <rect x="2" y="3" width="20" height="14" rx="2"/>
+                            <line x1="8" y1="21" x2="16" y2="21"/>
+                            <line x1="12" y1="17" x2="12" y2="21"/>
+                        </svg>
+                    </button>
+
+                    <button type="button" class="save-type-btn" data-save-type="png" title="PNG" aria-label="PNG">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                            <rect x="3" y="3" width="18" height="18" rx="3"/>
+                            <circle cx="8.5" cy="8.5" r="1.5"/>
+                            <polyline points="21 15 16 10 5 21"/>
+                        </svg>
+                    </button>
+
+                    <button type="button" class="save-type-btn" data-save-type="layer" title="Layer" aria-label="Layer">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                            <path d="M2 12l10 5 10-5"/>
+                            <path d="M2 17l10 5 10-5"/>
+                        </svg>
+                    </button>
+
+                    <button type="button" class="save-type-btn" data-save-type="text" title="Text" aria-label="Text">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="4 7 4 4 20 4 20 7"/>
+                            <line x1="9" y1="20" x2="15" y2="20"/>
+                            <line x1="12" y1="4" x2="12" y2="20"/>
+                        </svg>
+                    </button>
+
+                    <button type="button" class="save-type-btn" data-save-type="footage" title="Footage" aria-label="Footage">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="23 7 16 12 23 17 23 7"/>
+                            <rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
+                        </svg>
+                    </button>
+
+                    <button type="button" class="save-type-btn" data-save-type="effect" title="Effect Preset" aria-label="Effect">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="modal-field">
+                <label>Name</label>
+                <input type="text" id="input-name" placeholder="Template name...">
+            </div>
+
+            <div class="modal-field">
+                <label>Category</label>
+                <div class="custom-select" id="cat-select-wrapper">
+                    <div class="custom-select-trigger" id="cat-select-trigger">
+                        <span id="cat-select-value">Uncategorized</span>
+                        <svg width="10" height="6" viewBox="0 0 10 6">
+                            <path d="M0 0l5 6 5-6z" fill="#a855f7"/>
+                        </svg>
+                    </div>
+                    <div class="custom-select-dropdown" id="cat-select-dropdown">
+                        <div class="custom-select-option active">Uncategorized</div>
+                    </div>
+                </div>
+                <select id="modal-cat-select" style="display:none;">
+                    <option value="Uncategorized">Uncategorized</option>
+                </select>
+            </div>
+
+            <div class="modal-field">
+                <label>New Category <span class="label-hint">(optional)</span></label>
+                <input type="text" id="input-new-cat" placeholder="e.g. Shakes">
+            </div>
+
+            <div class="save-path-info">
+                <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <line x1="12" y1="8" x2="12" y2="12"/>
+                    <line x1="12" y1="16" x2="12.01" y2="16"/>
+                </svg>
+                <span id="save-dest-info">...</span>
+            </div>
+
+            <div class="modal-buttons">
+                <button id="btn-cancel">Cancel</button>
+                <button id="btn-confirm-save">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- RENAME MODAL -->
+    <div id="rename-modal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-title">Rename</div>
+            <div class="modal-field">
+                <label>New Name</label>
+                <input type="text" id="rename-input" placeholder="Enter new name...">
+            </div>
+            <div class="modal-buttons">
+                <button id="btn-rename-cancel">Cancel</button>
+                <button id="btn-rename-confirm">Rename</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MOVE MODAL -->
+    <div id="move-modal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-title">Move to Category</div>
+            <div class="modal-field">
+                <label>Select Category</label>
+                <div class="custom-select" id="move-cat-select-wrapper">
+                    <div class="custom-select-trigger" id="move-cat-select-trigger">
+                        <span id="move-cat-select-value">Select...</span>
+                        <svg width="10" height="6" viewBox="0 0 10 6">
+                            <path d="M0 0l5 6 5-6z" fill="#a855f7"/>
+                        </svg>
+                    </div>
+                    <div class="custom-select-dropdown" id="move-cat-select-dropdown"></div>
+                </div>
+            </div>
+            <div class="modal-buttons">
+                <button id="btn-move-cancel">Cancel</button>
+                <button id="btn-move-confirm">Move</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast" class="toast"></div>
+
+    <script src="js/CSInterface.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
